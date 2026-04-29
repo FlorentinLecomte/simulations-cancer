@@ -51,4 +51,4 @@ ylabel('\lambda_k');
 legend('Initial parameters', 'Increased motility', 'Location', 'northeast');
 hold off;
 
-saveas(gcf, 'lin_stab_analysis.png');
+saveas(gcf, 'figures/lin_stab_analysis.png');
