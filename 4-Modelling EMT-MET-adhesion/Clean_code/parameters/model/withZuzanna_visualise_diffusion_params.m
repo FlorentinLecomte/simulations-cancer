@@ -1,0 +1,41 @@
+
+%% cancer cells params
+
+    % Diffusion: sigmoid (wrt a) function i.e L/(1 + exp(-k(x-x_0)) )
+    Dc_L = 0*1e-2;    %maximum diffusion coefficient
+    Dc_sl = 20;    %maximum slope of the logistic
+    Dc_a0 = 0.5;    %sigmoid midpoint
+
+    % Haptotaxis: sigmoid (wrt a) function i.e. L/(1 + exp(-k(x-x_0)) )
+    lambda_L = 5e-1;      %maximum haptotaxis coefficient
+    lambda_sl = 20;         %maximum slope of the logistic
+    lambda_a0 = 0.5;        %sigmoid midpoint
+
+    % EMT gain (a dependent) % L \int_0^a c(t,x,a') exp(-gamma*(a-a').^2) da' 
+    % EMT losses (a dependent)  % L c(t,x,a)\int_a^1 exp(-gamma*(a-a').^2) da'
+    EMT_L = 2e+0;         %maximum EMT coefficient
+    EMT_gamma = 20;         %exponent coeff. 
+
+    % MET gain (a dependent) % L \int_a^1 c(t,x,a') exp(-expon*(a-a').^2) da' 
+    % MET losses (a dependent)  % L c(t,x,a)\int_0^a exp(-expon*(a-a').^2) da'
+    MET_L = 1e+1;       %maximum EMT coefficient
+    MET_gamma = 20;    %exponent coeff. 
+
+    % EMT & MET switches (gf dependent) %1/(1+exp(slp*(gf-gf0)))
+    EMT_slp = -30;             EMT_gf0 = 0.6;   %increasing with inflection at EMTgf0
+    MET_slp =  30;             MET_gf0 = 0.4;   %decreasing with inflection at METgf0
+
+    % cell proliferation
+    prol_rate = 1e-1;%5;                
+    prol_factor = 10;                    % (for the exponential; see reaction)
+
+%% growth factors
+    Dgf = 1e-2;                    % diffusion
+    gf_prod_rate = 3e-1;
+
+
+%% ecm degradation
+    degr_rate = 1e+5;%5;                % rate
+    degr_factor = 10;                    % (for the exponential; see reaction)
+
+
